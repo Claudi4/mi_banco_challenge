@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ConsigmentRoutingModule } from './consigment-routing.module';
+import { BubbleListComponent } from './components/bubble-list/bubble-list.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BubbleListComponent
+  ],
   imports: [
     CommonModule,
     ConsigmentRoutingModule

@@ -1,4 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --mb-green: #009330;
+}
+
+@font-face {
+  font-family: "OpenSansHebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-Light.ttf");
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Open Sans Hebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-LightItalic.ttf");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Open Sans Hebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans Hebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-Bold.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Open Sans Hebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-ExtraBold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Open Sans Hebrew";
+  src: url("./assets/fonts/hebrew/OpenSansHebrew-ExtraBoldItalic.ttf");
+  font-style: normal;
+  font-weight: 800;
+}
 body {
     margin: 0;
 }
+.w-100 {
+  width: 100%;
+}
+// H1 Nexa Black
+.title {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+.title-2 {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 6rem;
+}
+
+.title-3 {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+.title-4 {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
