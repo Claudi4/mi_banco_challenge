@@ -1,1 +1,68 @@
+<section class="loan">
+  <div class="loan__banner"></div>
+  <div class="loan__form">
+    <form [formGroup]="loanForm">
+      <div class="form__tag">
+        <span>Mi Efectivo Semilla</span>
+      </div>
+      <h1 class="title">Solicita tu Préstamo 100% online:</h1>
+      <div class="document">
+        <div class="document__number">
+          <select formControlName="documentType" class="mb-select" name="DNI">
+            <option value="1" selected>DNI</option>
+          </select>
+          <input
+            type="text"
+            formControlName="documentNumber"
+            class="mb-inputNumber"
+            placeholder="Nro. de documento*"
+            #documentNumberInput
+            (keydown)="onDocumentNumberKeyDown($event)"
+          />
+          <div *ngIf="loanForm.get('documentNumber').errors && (loanForm.get('documentNumber').dirty || loanForm.get('documentNumber').touched)">
+            <span *ngIf="loanForm.get('documentNumber').errors.required" class="errorMessage">Campo requerido</span>
+            <span *ngIf="loanForm.get('documentNumber').errors.excludedDni" class="errorMessage">El DNI debe ser diferente de 00000000.</span>
+          </div>
+        </div>
+        <input
+          type="text"
+          formControlName="fullName"
+          class="mb-inputText"
+          placeholder="Nombre Completo"
+        />
+        <div *ngIf="loanForm.get('fullName').errors && (loanForm.get('fullName').dirty || loanForm.get('fullName').touched)">
+          <span *ngIf="loanForm.get('fullName').errors.required" class="errorMessage">Campo requerido</span>
+          <span *ngIf="loanForm.get('fullName').errors.pattern" class="errorMessage">Este campo no admite carecteres especiales</span>
+        </div>
+        <input
+          type="text"
+          formControlName="amount"
+          class="mb-inputText"
+          placeholder="Monto a solicitar (S/)"
+        />
+        <div *ngIf="loanForm.get('amount').errors && (loanForm.get('amount').dirty || loanForm.get('amount').touched)">
+          <span *ngIf="loanForm.get('amount').errors.required" class="errorMessage">Campo requerido</span>
+          <span *ngIf="loanForm.get('amount').errors.min" class="errorMessage">El monto ingresado debe ser mayor a 100</span>
+          <span *ngIf="loanForm.get('amount').errors.max" class="errorMessage">El monto ingresado debe ser menor a 2000</span>
+          <span *ngIf="loanForm.get('amount').errors.pattern" class="errorMessage">Este campo solo admite números</span>
+        </div>
+        <div class="checkPolicy">
+          <input class="checkPolicy__box" type="checkbox" id="dataPolicy" name="dataPolicy" formControlName="dataPolicy"/>
+          <label for="dataPolicy" class="checkPolicy__label">He leído y entendido el <strong class="c-green">Consentimiento informado para el Tratamiento de Datos Personales.</strong></label>
+        </div>
+        <div *ngIf="loanForm.get('dataPolicy').errors && (loanForm.get('dataPolicy').dirty || loanForm.get('dataPolicy').touched)">
+          <span *ngIf="loanForm.get('dataPolicy').errors.required" class="errorMessage">Campo requerido</span>
+        </div>
+      </div>
+      <app-mb-button
+        (handleCLick)="continue()"
+        label="Continuar"
+        size="large"
+        [disabled]="!loanForm.valid"
+        styleClass="fluid"
+        [loading]="loading"
+      ></app-mb-button>
+    </form>
+  </div>
+</section>
 <app-benefits></app-benefits>
