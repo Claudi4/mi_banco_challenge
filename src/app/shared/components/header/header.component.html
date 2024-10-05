@@ -1,3 +1,16 @@
-<section class="header">
-    <img src="assets/images/logo_mi_banco.svg" alt="">
+<section class="header" *ngIf="!internHeader">
+  <img class="header__logo" src="assets/images/logo_mi_banco.svg" alt="" />
+</section>
+<section class="header intern" *ngIf="internHeader">
+  <img class="header__logo" src="assets/images/logo_mi_banco.svg" alt="" />
+  <p-button
+    class="btn-home"
+    label="Ir a Inicio"
+    icon="pi pi-home"
+    [rounded]="true"
+    [outlined]="true"
+    [disabled]="false"
+    iconPos="left"
+    (onClick)="goHome()"
+  />
 </section>

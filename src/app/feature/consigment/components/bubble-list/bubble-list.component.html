@@ -1,6 +1,7 @@
-<div class="steps">
-  <div class="step" *ngFor="let step of steps; let i = index">
-    <div class="circle">{{ i + 1 }}</div>
-    <div class="description">{{ step.description }}</div>
+<section class="steps">
+  <p class="steps__description">Podrás hacerlo en solo 4 pasos:</p>
+  <div class="step" *ngFor="let item of items; let i = index">
+    <div class="step__circle">{{ i + 1 }}</div>
+    <div class="steps__description" [innerHTML]="item"></div>
   </div>
-</div>
+</section>

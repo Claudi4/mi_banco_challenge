@@ -1,0 +1,42 @@
+<section class="calculator">
+  <div class="calculator__content">
+    <h2>Calculadora Tipo de Cambio</h2>
+    <p>Escribe el monto que deseas convertir*</p>
+    <div class="tags" *ngIf="isVentaFirst">
+      <span class="tags__tag">Venta: {{ venta | currency: 'S/. ' }}</span>
+      <span class="tags__tag">Compra: {{ compra | currency: 'S/. ' }}</span>
+    </div>
+    <div class="tags" *ngIf="!isVentaFirst">
+      <span class="tags__tag">Compra: {{ compra | currency: 'S/. ' }}</span>
+      <span class="tags__tag">Venta: {{ venta | currency: 'S/. ' }}</span>
+    </div>
+    <form [formGroup]="form" class="form">
+      <div>
+        <p-inputNumber
+          [formControlName]="isVentaFirst ? 'origen' : 'destino'"
+          class="p-fluid"
+          mode="currency"
+          (onInput)="convertir()"
+          [currency]="!isVentaFirst ? 'PEN':'USD'"
+          [locale]="!isVentaFirst ? 'es-PE' : 'en-US'"
+        />
+      </div>
+      <p-button
+        label="Change"
+        [rounded]="true"
+        [disabled]="false"
+        (onClick)="intercambiar()"
+      />
+      <div>
+        <p-inputNumber
+          [formControlName]="!isVentaFirst ? 'origen' : 'destino'"
+          class="p-fluid"
+          mode="currency"
+          (onInput)="convertir()"
+          [currency]="isVentaFirst ? 'PEN':'USD'"
+          [locale]="isVentaFirst ? 'es-PE' : 'en-US'"
+        />
+      </div>
+    </form>
+  </div>
+</section>

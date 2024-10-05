@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -82,16 +82,19 @@ export class LoanFormComponent {
     const documentNumber = this.loanForm.get('documentNumber').value;
     const isValidDocument = this.allowDocuments.includes(documentNumber);
     const firstName = this.loanForm.get('fullName').value.split(" ")[0];
-    const validationDocument: Record<string, () => void> = {
-      true: () => {
-        this.router.navigate(['prestamo/anuncio', { status: 'positive', firstName }]);
-      },
-      false: () => {
-        this.router.navigate(['prestamo/anuncio', { status: 'negative', firstName }]);
-      },
-      default: () => {},
-    };
-    this.loading = false;
-    (validationDocument[String(isValidDocument)] || validationDocument['default'])();
+    setTimeout(() => {
+      const validationDocument: Record<string, () => void> = {
+        true: () => {
+          this.router.navigate(['prestamo/anuncio', { status: 'positive', firstName }]);
+        },
+        false: () => {
+          this.router.navigate(['prestamo/anuncio', { status: 'negative', firstName }]);
+        },
+        default: () => {},
+      };
+      this.loading = false;
+      (validationDocument[String(isValidDocument)] || validationDocument['default'])();
+      
+    }, 2000);
   }
 }

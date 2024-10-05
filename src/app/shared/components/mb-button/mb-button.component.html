@@ -1,9 +1,22 @@
 <p-button 
+    *ngIf="pos === 'right'"
     [label]="label"
     [class]="styleClass"
     [size]="size"
     [type]="type || 'button'"
     [disabled]="disabled"
     [loading]="loading"
+    [icon]="icon"
     iconPos="right"
+    (onClick)="handleClick()" />
+<p-button 
+    *ngIf="pos !== 'right'"
+    [label]="label"
+    [class]="styleClass"
+    [size]="size"
+    [type]="type || 'button'"
+    [disabled]="disabled"
+    [loading]="loading"
+    [icon]="icon"
+    iconPos="left"
     (onClick)="handleClick()" />

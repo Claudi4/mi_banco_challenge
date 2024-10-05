@@ -1,0 +1,63 @@
+.tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  &__title {
+    text-align: center;
+  }
+}
+
+::ng-deep.p-tabview-nav {
+  justify-content: space-evenly;
+}
+
+::ng-deep.p-tabview .p-tabview-nav {
+  background-color: #F8F9FB;
+}
+
+::ng-deep.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  background-color: #F8F9FB;
+}
+
+::ng-deep.p-tabview .p-tabview-panels {
+  background-color: #F8F9FB;
+}
+
+::ng-deep.p-button {
+  background: #009330;
+}
+
+::ng-deep.p-button:not(:disabled):hover {
+  background: #145217;
+  color: #ffffff;
+  border-color: #449e48;
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 2rem 3rem;
+  display: flex;
+  max-width: 1100px;
+  margin: 2rem 0;
+  @media (max-width: '900px') {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
+  &__image {
+    margin: 0 auto;
+    max-width: 392px;
+    max-height: 324px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__detail {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

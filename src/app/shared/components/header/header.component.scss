@@ -1,8 +1,26 @@
 .header {
-    background-color: #009330;
-    min-height: 96px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #009330;
+  min-height: 96px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__logo {
+    @media (max-width: "900px") {
+      height: 40px;
+    }
+  }
+}
+
+.intern {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8rem;
+  @media (max-width: "900px") {
+    padding: 0 3rem;
+  }
+}
+
+::ng-deep.p-button.p-button-outlined {
+  color: white;
 }
