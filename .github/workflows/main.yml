@@ -26,12 +26,12 @@ jobs:
         run: npm run build:prod
 
       - name: Rename index for routing
-        run: mv dist/mi_banco_challenge/index.html dist/mi_banco_challenge/404.html
+        run: mv dist/mi_banco_challenge/public/index.html dist/mi_banco_challenge/public/404.html
 
       - name: Deploy to pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
-          build_dir: dist/mi_banco_challenge
+          build_dir: dist/mi_banco_challenge/public
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         
