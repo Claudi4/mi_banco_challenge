@@ -1,6 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   internHeader = false;
-  constructor(@Inject(DOCUMENT) document: any, private readonly router: Router) {
-    document.location.href.includes('remesa') || document.location.href.includes('calculadora') ? this.internHeader = true : this.internHeader = false;
+  constructor(private readonly router: Router) {}
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = this.router.url;
+        this.internHeader = currentRoute.includes('remesa') || currentRoute.includes('calculadora');
+      }
+    });
   }
-
   goHome() {
     this.internHeader = false;
     this.router.navigateByUrl('/', { replaceUrl: true });

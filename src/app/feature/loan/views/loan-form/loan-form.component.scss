@@ -94,6 +94,7 @@
 .checkPolicy {
   margin-top: 24px;
   display: flex;
+  align-items: center;
   &__box {
     border: 1px solid #ced4da;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s,

@@ -1,9 +1,9 @@
 <section class="announcement" *ngIf="status === 'positive'">
   <img src="assets/icons/ico_asesor.png" alt="">
-  <span class="title">{{name}},</span>
+  <span class="title t-name">{{name}},</span>
   <span class="title-4">ya cuentas con una solicitud en proceso.</span>
   <p>Te contactaremos vía llamada o correo para continuar con la evaluación. Gracias por confiar en Mibanco.</p>
-  <app-mb-button label="Ir al inicio" [disabled]="false"></app-mb-button>
+  <app-mb-button label="Ir al inicio" (handleCLick)="goHome()" [disabled]="false"></app-mb-button>
 </section>
 <section class="announcement" *ngIf="status === 'negative'">
   <img src="assets/icons/ico_asesor.png" alt="">

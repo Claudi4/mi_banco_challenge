@@ -9,10 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CalculatorComponent implements OnInit {
   form: any;
-  venta: number = 0;
-  compra: number = 0;
-  tipoCambio: number = 0;
-  isVentaFirst: boolean = true;
+  sell: number = 0;
+  buy: number = 0;
+  changeType: number = 0;
+  isSellFirst: boolean = true;
   currencyBase = 'USD';
   coins:any;
   constructor(private http: HttpClient) { }
@@ -23,37 +23,37 @@ export class CalculatorComponent implements OnInit {
       destino: new FormControl({ value: '', disabled: true })
     });
 
-    this.obtenerTipoCambio();
+    this.getChangeType();
   }
 
-  obtenerTipoCambio(): void {
+  getChangeType(): void {
     this.http.get(`https://api.exchangerate-api.com/v4/latest/${this.currencyBase}`)
       .subscribe((response: any) => {
-        this.tipoCambio = response.rates.PEN;
+        this.changeType = response.rates.PEN;
         this.coins = Object.entries(response.rates).map(([key, value]) => ({ key, value }));
-        this.venta = this.tipoCambio;
-        this.compra = this.tipoCambio * 1.05;
-        this.convertir();
+        this.sell = this.changeType;
+        this.buy = this.changeType * 1.05;
+        this.convert();
       });
   }
 
-  convertir(): void {
+  convert(): void {
     const valorOrigen = this.form.get('origen').value;
-    const valorDestino = this.isVentaFirst ? (valorOrigen * this.tipoCambio) : (valorOrigen / this.compra);
+    const valorDestino = this.isSellFirst ? (valorOrigen * this.changeType) : (valorOrigen / this.buy);
     this.form.get('destino').setValue(valorDestino);
   }
 
-  intercambiar(): void {
-    this.isVentaFirst = !this.isVentaFirst;
+  interchange(): void {
+    this.isSellFirst = !this.isSellFirst;
     const valorOrigen = this.form.get('origen').value;
     const valorDestino = this.form.get('destino').value;
     this.form.get('origen').setValue(valorDestino);
     this.form.get('destino').setValue(valorOrigen);
-    this.convertir();
+    this.convert();
   }
 
   changeCurrency(event: any) {
     this.currencyBase = event.value.key;
-    this.obtenerTipoCambio();
+    this.getChangeType();
   }
 }
