@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  internHeader = false;
+  constructor(@Inject(DOCUMENT) document: any, private readonly router: Router) {
+    document.location.href.includes('remesa') || document.location.href.includes('calculadora') ? this.internHeader = true : this.internHeader = false;
+  }
 
+  goHome() {
+    this.internHeader = false;
+    this.router.navigateByUrl('/', { replaceUrl: true });
+  }
 }

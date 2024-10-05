@@ -1,0 +1,28 @@
+<section class="tabs">
+  <h1 class="tabs__title title">¿Que deseas hacer hoy?</h1>
+  <p-tabView p-fluid>
+    <p-tabPanel p-fluid header="Quiero enviar">
+      <app-bubble-list [items]="sendListItems"></app-bubble-list>
+      <div class="card">
+        <div class="card__image">
+          <img src="assets/images/people1.png" alt="" width="392" height="324"/>
+        </div>
+        <div class="card__detail">
+          <h3 class="title-3">¿Cuánto me cuesta el envío?</h3>
+          <p class="">
+            Conoce los costos a cada país y las modalidades de envío.
+          </p>
+          <p-button
+            label="Ver Tarifario"
+            [rounded]="true"
+            [disabled]="false"
+            (onClick)="downloadPdf()"
+          />
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel p-fluid header="Quiero recibir">
+      <app-bubble-list [items]="recieveListItems"></app-bubble-list>
+    </p-tabPanel>
+  </p-tabView>
+</section>

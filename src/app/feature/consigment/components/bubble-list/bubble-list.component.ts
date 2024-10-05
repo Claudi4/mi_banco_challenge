@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bubble-list',
@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './bubble-list.component.scss'
 })
 export class BubbleListComponent {
-  steps = [
-    { description: 'Acércate a una c' },
-    { description: 'Ten a la mano los' },
-    { description: 'Realiza con nosc' },
-    { description: 'Finalmente, pro' }
-  ];
+  @Input()items: string[] = [];
 }

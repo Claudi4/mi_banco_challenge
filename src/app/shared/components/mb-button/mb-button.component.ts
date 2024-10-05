@@ -10,14 +10,14 @@ export class MbButtonComponent {
   @Input()disabled?: boolean = true;
   @Input()label?: string = '';
   @Input()type?: string = '';
+  @Input()icon?: string = '';
+  @Input()pos?: any = '';
   @Input()size?: 'small' | 'large' = 'small';
   @Input()styleClass?: string = '';
   @Output()handleCLick = new EventEmitter<void>();
 
-  constructor() {
-    console.log('sizze', this.styleClass);
-    
-  }
+  constructor() { }
+
   handleClick() {
     this.handleCLick.emit();
   }
