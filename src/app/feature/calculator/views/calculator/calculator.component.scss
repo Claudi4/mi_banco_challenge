@@ -7,6 +7,18 @@
   color: #ffffff;
   border-color: #449e48;
 }
+
+h2 {
+  margin: 0;
+}
+.sub-title {
+  font-family: "Open Sans Hebrew";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.79px;
+  text-align: center;
+  color: #151D18;
+}
 .calculator {
   background-color: #ecf7f0;
   display: flex;
@@ -28,8 +40,8 @@
     background-color: #009ff9;
     color: white;
     font-family: "Open Sans Hebrew";
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 22px;
     text-align: left;
     border-radius: 4px;

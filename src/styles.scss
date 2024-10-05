@@ -2,6 +2,7 @@
 @import "primeicons/primeicons.css";
 :root {
   --mb-green: #009330;
+  --mb-yellow: #ffd100;
 }
 
 @font-face {
@@ -40,6 +41,19 @@
   font-style: normal;
   font-weight: 800;
 }
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/lato/Lato-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/nunito/Nunito-SemiBold.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+
 body {
   margin: 0;
 }
@@ -52,21 +66,19 @@ body {
   font-size: 40px;
   line-height: 40px;
 }
-
 .title-2 {
   font-family: "Open Sans Hebrew", sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
   text-align: center;
-
 }
-
 .title-3 {
   font-family: "Open Sans Hebrew", sans-serif;
-  font-weight: 800;
-  font-size: 2.4rem;
-  line-height: 3rem;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: center;
 }
 .title-4 {
   font-family: "Open Sans Hebrew", sans-serif;
@@ -74,12 +86,23 @@ body {
   font-size: 1.6rem;
   line-height: 3rem;
 }
-.p-16 {
-  font-family: "Open Sans Hebrew", sans-serif;
+p,
+a {
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
 }
-.p-12 {
+.medium-text {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+}
 
+.p-14 {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
 }
