@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { Button } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Button } from 'primeng/button';
     ReactiveFormsModule,
     HttpClientModule,
     InputNumberModule,
-    Button
+    Button,
+    DropdownModule
   ]
 })
 export class CalculatorModule { }

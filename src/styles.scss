@@ -26,13 +26,13 @@
   font-family: "Open Sans Hebrew";
   src: url("./assets/fonts/hebrew/OpenSansHebrew-Bold.ttf");
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
 }
 @font-face {
   font-family: "Open Sans Hebrew";
   src: url("./assets/fonts/hebrew/OpenSansHebrew-ExtraBold.ttf");
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
 }
 @font-face {
   font-family: "Open Sans Hebrew";
@@ -41,24 +41,25 @@
   font-weight: 800;
 }
 body {
-    margin: 0;
+  margin: 0;
 }
-.w-100 {
-  width: 100%;
+.text-center {
+  text-align: center;
 }
-// H1 Nexa Black
 .title {
-    font-family: "Open Sans Hebrew", sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 40px;
-  }
-  
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+}
+
 .title-2 {
   font-family: "Open Sans Hebrew", sans-serif;
-  font-weight: 900;
-  font-size: 4rem;
-  line-height: 6rem;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+
 }
 
 .title-3 {
@@ -73,4 +74,12 @@ body {
   font-size: 1.6rem;
   line-height: 3rem;
 }
+.p-16 {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.p-12 {
 
+}

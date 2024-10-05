@@ -13,7 +13,8 @@ export class CalculatorComponent implements OnInit {
   compra: number = 0;
   tipoCambio: number = 0;
   isVentaFirst: boolean = true;
-
+  currencyBase = 'USD';
+  coins:any;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -26,11 +27,13 @@ export class CalculatorComponent implements OnInit {
   }
 
   obtenerTipoCambio(): void {
-    this.http.get('https://api.exchangerate-api.com/v4/latest/USD')
+    this.http.get(`https://api.exchangerate-api.com/v4/latest/${this.currencyBase}`)
       .subscribe((response: any) => {
         this.tipoCambio = response.rates.PEN;
+        this.coins = Object.entries(response.rates).map(([key, value]) => ({ key, value }));
         this.venta = this.tipoCambio;
         this.compra = this.tipoCambio * 1.05;
+        this.convertir();
       });
   }
 
@@ -44,17 +47,13 @@ export class CalculatorComponent implements OnInit {
     this.isVentaFirst = !this.isVentaFirst;
     const valorOrigen = this.form.get('origen').value;
     const valorDestino = this.form.get('destino').value;
-    console.log('ORIG', valorOrigen);
-    console.log('DEST', valorDestino);
-    
     this.form.get('origen').setValue(valorDestino);
     this.form.get('destino').setValue(valorOrigen);
-    // this.tipoCambio = 1 / this.tipoCambio;
-    console.log('TCambio', this.tipoCambio);
-    
-    console.log('ewef', this.venta, this.compra);
     this.convertir();
+  }
 
-    
+  changeCurrency(event: any) {
+    this.currencyBase = event.value.key;
+    this.obtenerTipoCambio();
   }
 }
