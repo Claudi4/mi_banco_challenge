@@ -1,10 +1,11 @@
 .footer {
   background-color: #009330;
-  padding: 1rem 2rem;
+  padding: 2rem 1rem 5rem 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   color: white;
+  gap: 2rem;
 
   &__col {
     max-width: 18%;
@@ -21,6 +22,7 @@
       font-weight: 400;
       line-height: 15.6px;
       text-align: left;
+      max-width: 134px;
     }
   }
 }
@@ -31,6 +33,7 @@
   line-height: 19.2px;
   text-align: left;
   list-style-type: none;
+  padding: 7px 0;
 
   a {
     color: white;
@@ -45,7 +48,7 @@
     font-family: "Open Sans Hebrew";
     font-weight: 700;
     line-height: 25.6px;
-    color: #ffd100;
+    color: var(--mb-yellow);  
     list-style-type: none;
   }
 
@@ -54,7 +57,7 @@
     justify-content: space-around;
     align-items: center;
     &-text {
-      font-family: "Open Sans Hebrew";
+      font-family: "Nunito";
       font-size: 15px;
       font-weight: 600;
       line-height: 20.46px;

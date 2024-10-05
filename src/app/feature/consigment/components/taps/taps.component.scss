@@ -6,7 +6,10 @@
     text-align: center;
   }
 }
-
+h3 {
+  margin: 0;
+  text-align: left;
+}
 ::ng-deep.p-tabview-nav {
   justify-content: space-evenly;
 }
@@ -25,12 +28,25 @@
 
 ::ng-deep.p-button {
   background: #009330;
+  font-weight: 700;
+  width: 219px;
+  font-size: 16px;
+  font-family: "Open Sans Hebrew";
 }
 
 ::ng-deep.p-button:not(:disabled):hover {
   background: #145217;
   color: #ffffff;
   border-color: #449e48;
+}
+
+::ng-deep.p-tabview-title {
+  font-family: "Open Sans Hebrew";
+  font-size: 24px;
+  font-weight: 700;
+  @media (max-width: '900px') {
+    font-size: 16px;
+  }
 }
 
 .card {

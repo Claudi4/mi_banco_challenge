@@ -7,7 +7,7 @@
 </section>
 <section class="announcement" *ngIf="status === 'negative'">
   <img src="assets/icons/ico_asesor.png" alt="">
-  <span class="title">{{name}},</span>
+  <span class="title t-name">{{name}},</span>
   <span class="title-4">por el momento no tenemos una oferta para ti.</span>
   <p>Por ahora, te invitamos a acercarte a nuestra red de agencias para realizar tu solicitud.</p>
   <app-mb-button label="Ir al inicio" (handleCLick)="goHome()" [disabled]="false"></app-mb-button>

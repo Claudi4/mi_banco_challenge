@@ -1,7 +1,7 @@
 <section class="calculator">
   <div class="calculator__content">
-    <h2>Calculadora Tipo de Cambio</h2>
-    <p>Escribe el monto que deseas convertir*💰</p>
+    <h2 class="title-3">Calculadora Tipo de Cambio</h2>
+    <p class="sub-title">Escribe el monto que deseas convertir*💰</p>
     <div class="tags" *ngIf="isVentaFirst">
       <span class="tags__tag">Venta: {{ venta | currency: 'S/. ' }}</span>
       <span class="tags__tag">Compra: {{ compra | currency: 'S/. ' }}</span>
@@ -39,7 +39,7 @@
       </div>
     </form>
     <div>
-      <h3>Cambiar moneda:</h3>
+      <p class="sub-title">Cambiar moneda:</p>
       <p-dropdown 
         [options]="coins" 
         placeholder="Selecciona moneda"
